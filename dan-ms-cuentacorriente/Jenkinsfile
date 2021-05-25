@@ -24,7 +24,7 @@ pipeline {
         }
         stage('backend tests') {
             steps {
-                bat "mvnw verify"
+                bat "./mvnw verify"
                 bat "echo 'configurar para ejecutar los tests'"
             }
         }
