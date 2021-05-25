@@ -10,7 +10,7 @@ pipeline {
             steps {
                 bat "java -version"
                 dir("dan-ms-cuentacorriente"){
-                    bat "./mvn clean"
+                    bat "./mvnw clean"
                 }
             }
         }
@@ -21,7 +21,7 @@ pipeline {
             steps {
                 bat "java -version"
                 dir("dan-ms-cuentacorriente"){
-                    bat "./mvn clean"
+                    bat "./mvnw clean"
                 }
                 bat "echo buildeando develop"
             }
