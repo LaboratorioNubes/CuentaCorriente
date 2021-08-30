@@ -1,4 +1,4 @@
-package danmscuentacorriente.danmscuentacorriente.config;
+package isi.dan.laboratorios.danmscuentacorriente.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
