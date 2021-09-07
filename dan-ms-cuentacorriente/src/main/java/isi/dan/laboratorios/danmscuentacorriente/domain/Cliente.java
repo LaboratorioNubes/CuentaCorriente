@@ -15,12 +15,10 @@ import javax.persistence.Id;
 @NoArgsConstructor
 @Entity
 public class Cliente {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String razonSocial;
     private String cuit;
     private String mail;
-    
 }

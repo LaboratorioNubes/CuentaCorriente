@@ -1,6 +1,7 @@
 package isi.dan.laboratorios.danmscuentacorriente.domain;
 
 import java.time.Instant;
+import java.util.Date;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -21,7 +22,7 @@ public class Pago {
 	@OneToOne
 	private Cliente cliente;
 
-	private Instant fechaPago;
+	private Date fechaPago;
 
 	@OneToOne
 	private MedioPago medio;

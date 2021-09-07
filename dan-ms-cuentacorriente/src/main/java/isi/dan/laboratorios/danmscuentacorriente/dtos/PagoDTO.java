@@ -1,6 +1,7 @@
 package isi.dan.laboratorios.danmscuentacorriente.dtos;
 
 import java.time.Instant;
+import java.util.Date;
 
 import isi.dan.laboratorios.danmscuentacorriente.domain.Cliente;
 import isi.dan.laboratorios.danmscuentacorriente.domain.MedioPago;
@@ -13,7 +14,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class PagoDTO {
 	private Integer id;
-	private Cliente cliente;
-	private Instant fechaPago;
-	private MedioPago medio;
+	private ClienteDTO cliente;
+	private Date fechaPago;
+	private MedioPagoDTO medio;
 }

@@ -4,15 +4,16 @@ import java.util.Optional;
 
 import isi.dan.laboratorios.danmscuentacorriente.domain.Pago;
 import isi.dan.laboratorios.danmscuentacorriente.dtos.PagoDTO;
+import isi.dan.laboratorios.danmscuentacorriente.dtos.requests.PagoRequestDTO;
 
 public interface PagoService {
     
-    public Optional<Pago> buscarPago(Integer id);
-    public Iterable<Pago> buscarPagos();
+    Optional<Pago> buscarPago(Integer id);
+    Iterable<Pago> buscarPagos();
 
-    public Pago guardarPago(PagoDTO pago);
-    public Optional<Pago> actualizarPago(PagoDTO pago, Integer id);
-    public void borrarPago(Integer id);
+    void guardarPago(PagoRequestDTO pago);
+    Optional<Pago> actualizarPago(PagoDTO pago, Integer id);
+    void borrarPago(Integer id);
 
-    public Iterable<Pago> buscarPagosPorCliente(Integer idCliente);
+    Iterable<Pago> buscarPagosPorCliente(Integer idCliente);
 }

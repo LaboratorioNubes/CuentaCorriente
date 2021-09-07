@@ -1,11 +1,6 @@
 package isi.dan.laboratorios.danmscuentacorriente.rest;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Optional;
-import java.util.OptionalInt;
-import java.util.stream.IntStream;
-
+import isi.dan.laboratorios.danmscuentacorriente.dtos.requests.PagoRequestDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -52,9 +47,8 @@ public class PagoRest {
     // Registra un pago de un cliente
     @PostMapping
     @ApiOperation(value = "Da de alta un pago")
-    public ResponseEntity<String> crear(@RequestBody PagoDTO nuevo){
-        nuevo.setId(ID_GEN++);
-        pagoService.guardarPago(nuevo);
+    public ResponseEntity<String> crear(@RequestBody PagoRequestDTO pago){
+        pagoService.guardarPago(pago);
         return ResponseEntity.ok().body("Pago creado con exito");
     }
 
