@@ -16,7 +16,7 @@ public abstract class MedioPago {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	protected Integer id;
-	protected String observacion;
+	private Integer id;
+	private String observacion;
 	
 }
