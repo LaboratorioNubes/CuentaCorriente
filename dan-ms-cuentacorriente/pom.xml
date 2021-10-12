@@ -122,13 +122,13 @@
 				<groupId>com.spotify</groupId>
 					<artifactId>dockerfile-maven-plugin</artifactId>
 					<version>1.4.13</version>
-					<executions>
+				<executions>
 					<execution>
-					<id>default</id>
-				<goals>
-					<goal>build</goal>	
-				</goals>
-				</execution>
+						<id>default</id>
+						<goals>
+							<goal>build</goal>	
+						</goals>
+					</execution>
 				</executions>
 				<configuration>
 				<repository>dan/ms-cuentacorriente</repository>

@@ -9,4 +9,12 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class EfectivoRequestDTO extends MedioPagoRequestDTO{
     private Integer nroRecibo;
+
+    public Integer getNroRecibo() {
+        return nroRecibo;
+    }
+
+    public void setNroRecibo(Integer nroRecibo) {
+        this.nroRecibo = nroRecibo;
+    }
 }
