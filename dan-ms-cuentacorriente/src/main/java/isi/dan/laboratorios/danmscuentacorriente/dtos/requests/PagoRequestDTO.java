@@ -21,36 +21,4 @@ public class PagoRequestDTO {
     private ChequeRequestDTO cheque;
     private EfectivoRequestDTO efectivo;
     private TransferenciaRequestDTO transferencia;
-
-    public Integer getCliente() {
-        return cliente;
-    }
-    public TransferenciaRequestDTO getTransferencia() {
-        return transferencia;
-    }
-    public void setTransferencia(TransferenciaRequestDTO transferencia) {
-        this.transferencia = transferencia;
-    }
-    public EfectivoRequestDTO getEfectivo() {
-        return efectivo;
-    }
-    public void setEfectivo(EfectivoRequestDTO efectivo) {
-        this.efectivo = efectivo;
-    }
-    public ChequeRequestDTO getCheque() {
-        return cheque;
-    }
-    public void setCheque(ChequeRequestDTO cheque) {
-        this.cheque = cheque;
-    }
-    public void setCliente(Integer cliente) {
-        this.cliente = cliente;
-    }
-
-    public Date getFechaPago() {
-        return fechaPago;
-    }
-    public void setFechaPago(Date fechaPago) {
-        this.fechaPago = fechaPago;
-    }
 }

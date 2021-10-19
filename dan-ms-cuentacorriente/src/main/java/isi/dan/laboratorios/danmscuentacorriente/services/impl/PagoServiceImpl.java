@@ -2,17 +2,11 @@ package isi.dan.laboratorios.danmscuentacorriente.services.impl;
 import java.util.Optional;
 
 import isi.dan.laboratorios.danmscuentacorriente.domain.*;
-import isi.dan.laboratorios.danmscuentacorriente.dtos.ClienteDTO;
-import isi.dan.laboratorios.danmscuentacorriente.dtos.MedioPagoDTO;
-import isi.dan.laboratorios.danmscuentacorriente.dtos.requests.ChequeRequestDTO;
-import isi.dan.laboratorios.danmscuentacorriente.dtos.requests.EfectivoRequestDTO;
 import isi.dan.laboratorios.danmscuentacorriente.dtos.requests.PagoRequestDTO;
-import isi.dan.laboratorios.danmscuentacorriente.dtos.requests.TransferenciaRequestDTO;
 import isi.dan.laboratorios.danmscuentacorriente.repositories.MedioPagoRepository;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import isi.dan.laboratorios.danmscuentacorriente.dtos.PagoDTO;
 import isi.dan.laboratorios.danmscuentacorriente.repositories.PagoRepository;
 import isi.dan.laboratorios.danmscuentacorriente.services.PagoService;
@@ -45,6 +39,8 @@ public class PagoServiceImpl implements PagoService {
     @Override
     public void guardarPago(PagoRequestDTO pagoDTO) {
 
+        System.out.println("************************************");
+        System.out.println(pagoDTO);
         Cliente cliente = modelMapper.map(clienteService.findById(pagoDTO.getCliente()), Cliente.class);
 
         Pago pagoNuevo = new Pago();
