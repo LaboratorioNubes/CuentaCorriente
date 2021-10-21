@@ -17,6 +17,7 @@ public class PagoRequestDTO {
     @JsonSerialize(using = DateSerializer.class)
     @JsonFormat(pattern="dd-MM-yyyy")
     private Date fechaPago;
+    private Double monto;
 
     private ChequeRequestDTO cheque;
     private EfectivoRequestDTO efectivo;

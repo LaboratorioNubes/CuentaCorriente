@@ -1,10 +1,12 @@
 package isi.dan.laboratorios.danmscuentacorriente.services;
 
+import java.util.List;
 import java.util.Optional;
 
 import isi.dan.laboratorios.danmscuentacorriente.domain.Pago;
 import isi.dan.laboratorios.danmscuentacorriente.dtos.PagoDTO;
 import isi.dan.laboratorios.danmscuentacorriente.dtos.requests.PagoRequestDTO;
+import isi.dan.laboratorios.danmscuentacorriente.dtos.response.PagoClienteResponseDTO;
 
 public interface PagoService {
     
@@ -15,5 +17,5 @@ public interface PagoService {
     Optional<Pago> actualizarPago(PagoDTO pago, Integer id);
     void borrarPago(Integer id);
 
-    Iterable<Pago> buscarPagosPorCliente(Integer idCliente);
+    List<PagoClienteResponseDTO> buscarPagosPorCliente(Integer idCliente);
 }

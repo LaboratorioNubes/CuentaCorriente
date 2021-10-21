@@ -1,8 +1,11 @@
 package isi.dan.laboratorios.danmscuentacorriente.services.impl;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 
 import isi.dan.laboratorios.danmscuentacorriente.domain.*;
 import isi.dan.laboratorios.danmscuentacorriente.dtos.requests.PagoRequestDTO;
+import isi.dan.laboratorios.danmscuentacorriente.dtos.response.PagoClienteResponseDTO;
 import isi.dan.laboratorios.danmscuentacorriente.repositories.MedioPagoRepository;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -39,13 +42,12 @@ public class PagoServiceImpl implements PagoService {
     @Override
     public void guardarPago(PagoRequestDTO pagoDTO) {
 
-        System.out.println("************************************");
-        System.out.println(pagoDTO);
         Cliente cliente = modelMapper.map(clienteService.findById(pagoDTO.getCliente()), Cliente.class);
 
         Pago pagoNuevo = new Pago();
         pagoNuevo.setCliente(cliente);
         pagoNuevo.setFechaPago(pagoDTO.getFechaPago());
+        pagoNuevo.setMonto(pagoDTO.getMonto());
 
         if(pagoDTO.getCheque() != null){
             Cheque cheque = new Cheque();
@@ -86,9 +88,20 @@ public class PagoServiceImpl implements PagoService {
     }
 
     @Override
-    public Iterable<Pago> buscarPagosPorCliente(Integer idCliente) {
-        // TODO Not possible without bdd
-        return null;
+    public List<PagoClienteResponseDTO> buscarPagosPorCliente(Integer idCliente) {
+
+        List<Pago> list = pagoRepo.findByCliente(idCliente);
+        List<PagoClienteResponseDTO> resultado =  new ArrayList<>();
+
+        for(Pago p: list){
+            PagoClienteResponseDTO aux = new PagoClienteResponseDTO();
+            aux.setFechaPago(p.getFechaPago());
+            aux.setMonto(p.getMonto());
+
+            resultado.add(aux);
+        }
+
+        return resultado;
     }
     
 }

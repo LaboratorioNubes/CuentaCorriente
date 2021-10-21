@@ -1,6 +1,7 @@
 package isi.dan.laboratorios.danmscuentacorriente.rest;
 
 import isi.dan.laboratorios.danmscuentacorriente.dtos.requests.PagoRequestDTO;
+import isi.dan.laboratorios.danmscuentacorriente.dtos.response.PagoClienteResponseDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -11,6 +12,8 @@ import io.swagger.annotations.ApiResponses;
 import isi.dan.laboratorios.danmscuentacorriente.domain.Pago;
 import isi.dan.laboratorios.danmscuentacorriente.dtos.PagoDTO;
 import isi.dan.laboratorios.danmscuentacorriente.services.PagoService;
+
+import java.util.List;
 
 @RestController
 @RequestMapping(PagoRest.API_PAGO)
@@ -69,7 +72,8 @@ public class PagoRest {
 
     @GetMapping(path = "/cliente/{id}")
     @ApiOperation(value = "Buscar un pago por id de cliente")
-    public ResponseEntity<Iterable<Pago>> pagoPorClienteId(@PathVariable Integer id){
+    public ResponseEntity<List<PagoClienteResponseDTO>> pagoPorClienteId(@PathVariable Integer id){
         return ResponseEntity.ok(pagoService.buscarPagosPorCliente(id));
     }
+
 }
